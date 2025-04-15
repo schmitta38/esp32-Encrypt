@@ -92,7 +92,7 @@ String Cipher::encryptBuffer(char * plainText, char * key) {
   
   encrypt(plainText, key, cipherTextOutput);
   
-  for (int i = 0; i < 16; i++) {
+  for (int8_t i = 0; i < 16; i++) {
     cipherTextString = cipherTextString + (char)cipherTextOutput[i];
   }
 
@@ -109,13 +109,13 @@ String Cipher::decryptBuffer(String cipherText, char * key) {
   unsigned char cipherTextOutput[16];
   unsigned char decipheredTextOutput[16];
 
-  for (int i = 0; i < 16; i++) {
+  for (int8_t i = 0; i < 16; i++) {
     cipherTextOutput[i] = (char)cipherText[i];
   }
   
   decrypt(cipherTextOutput, key, decipheredTextOutput);
 
-  for (int i = 0; i < 16; i++) {
+  for (int8_t i = 0; i < 16; i++) {
     decipheredTextString = decipheredTextString + (char)decipheredTextOutput[i];
 
     if(decipheredTextString[i] == '\0') {
